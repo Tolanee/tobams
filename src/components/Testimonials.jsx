@@ -19,12 +19,12 @@ export default function Testimonials (){
             
         },]
     return(
-        <div className="bg-[#F49AC1] flex flex-col items-center justify-center p-16" >
+        <div className="bg-[#F49AC1] flex flex-col items-center justify-center p-6 md:p-16" >
                 <StyledText variant="bodyHeading">What Our Clients Are Saying About Us</StyledText>
 
-            <div className="flex p-16 space-x-16 ">
+            <div className="flex flex-col md:flex-row md:p-16 md:space-x-16 space-y-3 md:space-y-0 ">
                 {data.map((item, index)=>(
-                    <div key={index} className="bg-white py-7 px-6 w-1/3 rounded-lg">
+                    <div key={index} className="bg-white py-7 md:px-6 px-2 md:w-1/3 rounded-lg">
                         <div className="flex flex-row justify-between ">
                             <p className="text-[#811141]">{item.name}</p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="100" height="20" viewBox="0 0 100 20" fill="none">
