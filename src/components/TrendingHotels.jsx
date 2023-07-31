@@ -83,7 +83,7 @@ export default function TrendingHotels (){
              <div className="flex flex-wrap ">
         {data.map((item, index) => (
           <div key={index} className="md:w-1/4 p-2">
-            <div className="mt-5 self-start border border-gray-3 p-2 rounded-md shadow-md hover:-translate-y-3 hover:scale-100 transition ease-in-out duration-150 ">
+            <div className="mt-5 self-start border border-gray-3 p-2 rounded-md shadow-md hover:-translate-y-3 hover:scale-105 transition ease-in-out duration-150 ">
               <img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} />
               <div className="mt-5">
                 <p className="text-lg ">{item.name}</p>
