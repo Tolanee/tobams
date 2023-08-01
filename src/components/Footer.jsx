@@ -1,3 +1,8 @@
+import facebook from '../assets/socialIcons/fb.svg';
+import linkedin from '../assets/socialIcons/inkedin.svg'
+import ig from '../assets/socialIcons/instagram.svg'
+import twitter from '../assets/socialIcons/twitter.svg'
+
 
 export default function Footer (){
     const footerMenus = [
@@ -55,6 +60,16 @@ export default function Footer (){
                 <div className="mt-2 w-full flex flex-row">
                     <input placeholder="Enter Your Email Address" type="text" value="" className="border border-gray-200 p-3 w-2/3"/>
                     <input type="submit" value="Subscribe" className="bg-[#811141] text-white p-3 w-1/3 "/>
+                </div>
+                <div className='pt-3'>
+                    <a className='text-[#202020] underline' type="email" href="mailto:theteam@hotelsfashion.com">mailto:theteam@hotelsfashion.com</a>
+                    <div className='flex space-x-3 pt-3'>
+                        <img src={facebook} className='w-8 h-8'/>
+                        <img src={linkedin} className='w-8 h-8'/>
+                        <img src={ig} className='w-8 h-8'/>
+                        <img src={twitter} className='w-8 h-8'/>
+
+                    </div>
                 </div>
 
             </div>

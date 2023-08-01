@@ -8,6 +8,10 @@ import imagery from '../assets/imagery.png';
 import mirage from '../assets/mirage.png';
 import aperture from '../assets/aperture.png';
 import exclusiveShots from '../assets/exclusiveShots.png'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 
 
@@ -17,12 +21,14 @@ import exclusiveShots from '../assets/exclusiveShots.png'
 
 
 export default function TrendingBrands(){
-   
+  const screenWidth = window.screen.width
     
 
     const data = [
         {
             img:Tcolor,
+            imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name:"Tobams Colors",
             excerpt:"Tobams Colors has been created to provide worldwide identity within A...",
             content:"Tobams Colors has been created to provide worldwide identity within African Ankara wax material. We created a fusion of high end clothing with traditional African prints utilising rich colours to create every day, stylish yet affordable pieces.We use a core set of 6 colours to differentiate ourselves. Our staple colors and patterns remain the same but each season is represented by a different organisation of these colours. Each of our colors represent an important aspect of nature. The colors are an acronym of our name.Our products have been designed with versatility in mind. We have aimed to blend African culture with everyday trends using African Super Wax customized prints and contemporary designs. The product range is aligned to both men and women",
@@ -30,6 +36,9 @@ export default function TrendingBrands(){
 
         },
         {
+            
+           imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             img:collxx,
             name:"Collxx",
             excerpt:"The Collxx, is a multinational platform that promotes sustainabil...",
@@ -37,6 +46,9 @@ export default function TrendingBrands(){
             
         },
         {
+            
+           imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             img:royal,
             name:"The Royal Seams",
             excerpt:"At The Royal Seams, we believe that fashion is more than just clothing—it's a ...",
@@ -44,6 +56,9 @@ export default function TrendingBrands(){
             
         },
         {
+            
+           imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             img:imagery,
             name:"Imaginary Photography",
             excerpt:"Imaginary Photography is not just about capturing moments; it's about creating...",
@@ -51,6 +66,9 @@ export default function TrendingBrands(){
             
         },
         {
+            
+           imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             img:fine,
             name:"Fine Silk Fashion",
             excerpt:"We believe that the touch and drape of silk have the power to transform...",
@@ -58,6 +76,9 @@ export default function TrendingBrands(){
             
         },
         {
+            
+           imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             img:mirage,
             name:"Mirage Wears",
             excerpt:"Mirage Wears is a dynamic clothing brand that breathes life into your style. We are...",
@@ -65,6 +86,9 @@ export default function TrendingBrands(){
             
         },
         {
+            
+           imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             img:exclusiveShots,
             name:"Exclusive Shots",
             excerpt:"Exclusive Shots is a photography brand dedicated to capturing moments of...",
@@ -72,6 +96,9 @@ export default function TrendingBrands(){
             
         },
         {
+            
+           imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             img:aperture,
             name:"Aperture Studios",
             excerpt:"Aperture Studios is a photography brand dedicated to the art of visual...",
@@ -111,12 +138,29 @@ export default function TrendingBrands(){
   {data.map((item, index) => (
     <div
       key={index}
-      className="md:w-1/4 p-2"
+      className="md:w-1/4 w-full p-2"
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={() => handleMouseLeave(index)}
     >
       <div className="mt-5 self-start border border-gray-3 p-2 rounded-md shadow-md transform transition-transform hover:-translate-y-1 hover:scale-105  ease-out duration-300">
-        <img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} />
+      {screenWidth > 767 ?(
+      <Swiper
+      slidesPerView={1}
+      navigation={true}
+      loop={true}
+      spaceBetween={10}
+      grabCursor={true}
+    
+      modules={[Navigation]} className="mySwiper"
+     
+    >
+      <SwiperSlide><img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} /> </SwiperSlide>
+      <SwiperSlide><img src={item.imgTwo} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      <SwiperSlide><img src={item.imgThree} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      <SwiperSlide><img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      ...
+      
+    </Swiper>):<img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} /> }
         <div className="mt-5">
           <p className="text-lg text-[#202020]">{item.name}</p>
           <p className={`text-xs font-thin text-[#494848] ${hoverStates[index] ? 'hidden' : 'block'}`}>{item.excerpt}</p>

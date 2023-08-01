@@ -1,10 +1,19 @@
 import StyledText from "../ui/StyledText";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+
 export default function TrendingHotels (){
+    const screenWidth = window.screen.width
 
     const data = [
         {
             img:"https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg",
+            imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name:"The Vineyard",
             location:"Berkshire",
             status:"Fully Booked",
@@ -13,6 +22,8 @@ export default function TrendingHotels (){
         },
         {
             img:"https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg",
+            imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name:"Grand Hotel",
             location:"Sunderland",
             status:"Fully Booked",
@@ -21,6 +32,8 @@ export default function TrendingHotels (){
         },
         {
             img:"https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg",
+            imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name:"Hambleton Hall",
             location:"Ruthland",
             status:"Fully Booked",
@@ -29,6 +42,8 @@ export default function TrendingHotels (){
         },
         {
             img:"https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg",
+            imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name:"The Lowry Hotel",
             location:"Lancaster",
             status:"Fully Booked",
@@ -37,6 +52,8 @@ export default function TrendingHotels (){
         },
         {
             img:"https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg",
+            imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name:"Ten Hill Palace Hotel",
             location:"Edinburgh",
             status:"Fully Booked",
@@ -45,6 +62,8 @@ export default function TrendingHotels (){
         },
         {
             img:"https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg",
+            imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name:"The Vineyard",
             location:"Glasgow",
             status:"Fully Booked",
@@ -53,6 +72,8 @@ export default function TrendingHotels (){
         },
         {
             img:"https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg",
+            imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name:"The Vineyard",
             location:"Cambridge",
             status:"Fully Booked",
@@ -61,6 +82,8 @@ export default function TrendingHotels (){
         },
         {
             img:"https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg",
+            imgTwo:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            imgThree:"https://images.pexels.com/photos/2547555/pexels-photo-2547555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
             name:"The Vineyard",
             location:"London",
             status:"Fully Booked",
@@ -84,7 +107,25 @@ export default function TrendingHotels (){
         {data.map((item, index) => (
           <div key={index} className="md:w-1/4 p-2">
             <div className="mt-5 self-start border border-gray-3 p-2 rounded-md shadow-md hover:-translate-y-3 hover:scale-105 transition ease-in-out duration-150 ">
-              <img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} />
+           {screenWidth > 767 ?(
+     <Swiper
+      slidesPerView={1}
+      navigation={true}
+      loop={true}
+      spaceBetween={10}
+      grabCursor={true}
+    
+      modules={[Navigation]} className="mySwiper"
+     
+    >
+      <SwiperSlide><img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      <SwiperSlide><img src={item.imgTwo} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      <SwiperSlide><img src={item.imgThree} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      <SwiperSlide><img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      ...
+      
+    </Swiper>):(<img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} />) }
+              
               <div className="mt-5">
                 <p className="text-lg ">{item.name}</p>
                 <div className="flex flex-row justify-between">

@@ -1,6 +1,11 @@
 import StyledText from "../ui/StyledText";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 export default function AvailableHotels (){
+    const screenWidth = window.screen.width
 
     const data = [
         {
@@ -84,7 +89,24 @@ export default function AvailableHotels (){
         {data.map((item, index) => (
           <div key={index} className="md:w-1/4 p-2">
             <div className="mt-5 self-start border border-gray-3 p-2 rounded-md shadow-md hover:-translate-y-3 hover:scale-100 transition ease-in-out duration-150 ">
-              <img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} />
+            {screenWidth > 767 ?(
+     <Swiper
+      slidesPerView={1}
+      navigation={true}
+      loop={true}
+      spaceBetween={10}
+      grabCursor={true}
+    
+      modules={[Navigation]} className="mySwiper"
+     
+    >
+      <SwiperSlide><img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      <SwiperSlide><img src={item.imgTwo} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      <SwiperSlide><img src={item.imgThree} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      <SwiperSlide><img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} /></SwiperSlide>
+      ...
+      
+    </Swiper>):(<img src={item.img} className="w-full h-1/2 rounded-lg" alt={item.name} />) }
               <div className="mt-5">
                 <p className="text-lg ">{item.name}</p>
                 <div className="flex flex-row justify-between">
